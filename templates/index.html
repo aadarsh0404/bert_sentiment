@@ -1,0 +1,33 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>BERT Review Sentiment Analysis</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500&display=swap" rel="stylesheet">
+	</head>
+	<style>
+	body{
+		font-family: 'Shippori Mincho B1', serif;
+		background: #43C6AC;  /* fallback for old browsers */
+		background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+	.jumbotron{
+		color: rgb(27,150,161);
+	}
+	</style>
+	<body>
+		<div class="jumbotron">
+			<h1 class="display-4">Review Sentiment Analysis</h1>
+			<p class="lead">A model that is built using bert
+			which can predict whether the review given to a movie is positive or negarive
+			</p>
+		</div>
+		<form action="{{ url_for('predict')}}" method="post" class="form-inline d-flex justify-content-center" >
+			<input name="sentiment" class="form-control mr-sm-2" type="search" placeholder="Review" aria-label="Search">
+			<button class="btn my-2" type="submit">Predict</button>
+		</form>
+		<br><br><h3 style="text-align:center">{{ prediction_text }}<h3>
+	</body>
+</html>
